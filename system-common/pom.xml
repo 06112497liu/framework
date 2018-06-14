@@ -20,6 +20,13 @@
     </dependency>
     <!-- spring-boot end -->
 
+    <!-- web-starter start -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- web-starter end -->
+
     <!-- aop start -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -53,6 +60,20 @@
       <artifactId>transport</artifactId>
     </dependency>
     <!-- elasticsearch end -->
+
+    <!-- beanutils start -->
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+    </dependency>
+    <!-- beanutils end -->
+
+    <!-- json start -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+    </dependency>
+    <!-- json end -->
 
   </dependencies>
 

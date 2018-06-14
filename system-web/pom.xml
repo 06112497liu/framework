@@ -23,13 +23,6 @@
       <artifactId>system-business</artifactId>
     </dependency>
 
-    <!-- web-starter start -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-    <!-- web-starter end -->
-
   </dependencies>
 
   <!-- profile对资源的操作 -->
