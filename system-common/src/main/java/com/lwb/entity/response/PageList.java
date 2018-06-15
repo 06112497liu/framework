@@ -21,7 +21,7 @@ public class PageList<T> implements Serializable {
     //总记录数
     protected long    total;
     //结果集
-    protected List<T> list;
+    protected List<T> data;
     //当前页
     private   int     pageNum;
     //每页的数量

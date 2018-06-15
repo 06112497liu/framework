@@ -21,7 +21,7 @@ public interface PageListUtil {
     static <E, T> PageList<T> create(Page<E> page, Class<T> clazz) {
         return
             PageList.<T>builder()
-                .list(BeanMapperUtil.mapList(page, clazz))
+                .data(BeanMapperUtil.mapList(page, clazz))
                 .pageNum(page.getPageNum())
                 .pageSize(page.getPageSize())
                 .pages(page.getPages())

@@ -1,6 +1,5 @@
 package com.lwb.service.impl;
 
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.lwb.dao.PersonDao;
 import com.lwb.entity.response.PageList;
@@ -16,8 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
-import static java.util.stream.Stream.builder;
 
 /**
  * @author liuweibo
@@ -57,9 +54,10 @@ public class PersonServiceImpl implements PersonService {
     public PageList<PersonVo> getPage(Integer pageNum, Integer pageSize) {
         return
             PageListUtil.create(
-                PageHelper.startPage(pageNum, pageSize).doSelectPage(
-                    () -> this.personDao.selectByExample(new PersonExample())
-                ),
+                PageHelper.startPage(pageNum, pageSize)
+                    .doSelectPage(
+                        () -> this.personDao.selectByExample(new PersonExample())
+                    ),
                 PersonVo.class
             );
     }
