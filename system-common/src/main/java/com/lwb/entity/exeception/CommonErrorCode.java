@@ -10,7 +10,8 @@ public enum CommonErrorCode implements ErrorCode {
     SYS_ERROR(101, "系统异常"),
     INNER_ERROR(102, "内部异常"),
     PARAM_ERROR(103, "参数异常"),
-    BIZ_ERROR(104, "业务异常"),;
+    BIZ_ERROR(104, "业务异常"),
+    REPEAT_SUBMIT(105, "表单重复提交");
 
     private int status;
     private String message;

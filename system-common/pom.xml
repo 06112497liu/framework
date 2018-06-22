@@ -61,6 +61,18 @@
     </dependency>
     <!-- elasticsearch end -->
 
+    <!-- retry start -->
+    <dependency>
+      <groupId>org.springframework.retry</groupId>
+      <artifactId>spring-retry</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.rholder</groupId>
+      <artifactId>guava-retrying</artifactId>
+    </dependency>
+    <!-- retry end -->
+
     <!-- beanutils start -->
     <dependency>
       <groupId>commons-beanutils</groupId>

@@ -23,21 +23,32 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
+    /**
+     * 根据id查询某人的信息
+     *
+     * @param id 某人的id
+     * @return
+     */
     @RequestMapping("/{id}")
     public RestResult personById(@PathVariable("id") Integer id) {
-        return
-            RestResult.ok(
-                this.personService.getPersonByID(id)
-            );
+        return RestResult.ok(
+            this.personService.getPersonByID(id)
+        );
     }
 
+    /**
+     * 分页查询人员信息
+     *
+     * @param pageNum  当前页
+     * @param pageSize 每页大小
+     * @return
+     */
     @RequestMapping("/page/{pageNum}/{pageSize}")
     public RestResult page(@PathVariable("pageNum") Integer pageNum,
-                                         @PathVariable("pageSize") Integer pageSize) {
-        return
-            RestResult.ok(
-                this.personService.getPage(pageNum, pageSize)
-            );
+                           @PathVariable("pageSize") Integer pageSize) {
+        return RestResult.ok(
+            this.personService.getPage(pageNum, pageSize)
+        );
     }
 
 }
