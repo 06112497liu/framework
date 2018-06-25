@@ -11,7 +11,8 @@ public enum CommonErrorCode implements ErrorCode {
     INNER_ERROR(102, "内部异常"),
     PARAM_ERROR(103, "参数异常"),
     BIZ_ERROR(104, "业务异常"),
-    REPEAT_SUBMIT(105, "表单重复提交");
+    REPEAT_SUBMIT(105, "表单重复提交"),
+    REQUEST_FREQUENT(106, "请求过于频繁，请稍后重试！");
 
     private int status;
     private String message;
