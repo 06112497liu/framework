@@ -10,4 +10,5 @@ public interface EsConstant {
     String bank_index_field_firstname = "firstname";
     String bank_index_field_lastname  = "lastname";
     String bank_index_field_email     = "email";
+    String bank_index_field_age       = "age";
 }

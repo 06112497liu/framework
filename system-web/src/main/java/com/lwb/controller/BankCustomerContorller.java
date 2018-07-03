@@ -22,11 +22,32 @@ public class BankCustomerContorller {
     /**
      * 根据银行客户全文检索客户信息
      *
-     * @return
+     * @param name 客户姓名
+     * @return {@link RestResult}
      */
     @GetMapping("/search/{name}")
     public RestResult fullTextSearchByName(@PathVariable("name") String name) {
         return RestResult.ok(this.customerService.fullTextSearchByName(name));
+    }
+
+    /**
+     * 查询不能年龄段的客户
+     *
+     * @return {@link RestResult}
+     */
+    @GetMapping("/group/age/range")
+    public RestResult groupByAgeRange() {
+        return RestResult.ok(this.customerService.groupByAgeRange());
+    }
+
+    /**
+     * 查询不能年龄段的客户
+     *
+     * @return {@link RestResult}
+     */
+    @GetMapping("/avg/balance")
+    public RestResult aggAvgBalance() {
+        return RestResult.ok(this.customerService.aggAvgBalance());
     }
 
 }
