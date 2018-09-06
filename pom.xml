@@ -13,6 +13,7 @@
     <module>system-common</module>
     <module>system-business</module>
     <module>system-study</module>
+    <module>system-controller</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
