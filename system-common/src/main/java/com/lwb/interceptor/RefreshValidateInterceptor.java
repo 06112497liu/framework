@@ -1,8 +1,8 @@
 package com.lwb.interceptor;
 
 import com.lwb.annotation.RefreshValidate;
-import com.lwb.entity.exeception.BizException;
-import com.lwb.entity.exeception.CommonErrorCode;
+import com.lwb.entity.exeception.ExConstant;
+import com.lwb.entity.exeception.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.method.HandlerMethod;
@@ -38,7 +38,7 @@ public class RefreshValidateInterceptor extends HandlerInterceptorAdapter {
             RefreshValidate annotation = method.getAnnotation(RefreshValidate.class);
             if (Objects.nonNull(annotation)) {
                 if (this.isFrequent(request)) {
-                    throw new BizException(CommonErrorCode.REQUEST_FREQUENT);
+                    throw new ServiceException(ExConstant.REPEAT_SUBMIT);
                 }
             }
         }

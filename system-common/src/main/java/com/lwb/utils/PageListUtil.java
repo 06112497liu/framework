@@ -16,11 +16,10 @@ public interface PageListUtil {
      *
      * @param page  原始分页数据
      * @param clazz 要转化成的vo
-     * @param <E>   原始对象
      * @param <T>   转化对象
      * @return
      */
-    static <E, T> PageList<T> create(Page<E> page, Class<T> clazz) {
+    static <T> PageList<T> create(Page<?> page, Class<T> clazz) {
         return
             PageList.<T>builder()
                 .data(BeanMapperUtil.mapList(page, clazz))
@@ -39,11 +38,14 @@ public interface PageListUtil {
      * @param pageSize 当前页大小
      * @param total    总记录数
      * @param clazz    转化对象VO
-     * @param <E>
      * @param <T>
      * @return
      */
-    static <E, T> PageList<T> create(List<E> data, Integer pageNum, Integer pageSize, Integer total, Class<T> clazz) {
+    static <T> PageList<T> create(List<?> data,
+                                  Class<T> clazz,
+                                  Integer pageNum,
+                                  Integer pageSize,
+                                  Integer total) {
         return
             PageList.<T>builder()
                 .data(BeanMapperUtil.mapList(data, clazz))

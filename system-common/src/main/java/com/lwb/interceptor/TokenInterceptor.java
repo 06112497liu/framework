@@ -1,8 +1,8 @@
 package com.lwb.interceptor;
 
 import com.lwb.annotation.Token;
-import com.lwb.entity.exeception.BizException;
-import com.lwb.entity.exeception.CommonErrorCode;
+import com.lwb.entity.exeception.ExConstant;
+import com.lwb.entity.exeception.ServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StringUtils;
@@ -43,8 +43,8 @@ public class TokenInterceptor extends HandlerInterceptorAdapter {
                     lock.lock();
                     try {
                         if (isRepeatSubmit(request)) {
-                            logger.error("表单重复提交");
-                            throw new BizException(CommonErrorCode.REPEAT_SUBMIT);
+                            logger.error(ExConstant.REPEAT_SUBMIT);
+                            throw new ServiceException(ExConstant.REPEAT_SUBMIT);
                         }
                         request.getSession(false).removeAttribute("token");
                     } finally {

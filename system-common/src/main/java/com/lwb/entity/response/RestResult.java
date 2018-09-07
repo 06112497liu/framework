@@ -7,36 +7,32 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * @date 2018/6/14
  */
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
-public class RestResult<T> {
+public class RestResult {
 
-    public static final int CODE_SUCCESS = 200;
+    private static final String SUCCESS = "success";
 
-    public String msg = "";
+    private static final String FAIL = "fail";
 
-    private int status;
+    public String msg;
 
-    private T data;
+    private Object data;
 
     public long responseTime = System.currentTimeMillis();
 
     public RestResult() {
-        this.status = 200;
-        this.msg = "ok";
+        this.msg = SUCCESS;
     }
 
-    public RestResult(T data) {
-        this.status = 200;
-        this.msg = "ok";
+    public RestResult(Object data) {
+        this.msg = SUCCESS;
         this.data = data;
     }
 
-    public RestResult(int status, String msg) {
-        this.status = status;
+    public RestResult(String msg) {
         this.msg = msg;
     }
 
-    public RestResult(int status, String msg, T data) {
-        this.status = status;
+    public RestResult(Object data, String msg) {
         this.msg = msg;
         this.data = data;
     }
@@ -49,17 +45,17 @@ public class RestResult<T> {
         return new RestResult(data);
     }
 
-    public static RestResult fail(int status, String message) {
-        return new RestResult(status, message);
+    public static RestResult ok(Object data, String msg) {
+        return new RestResult(data, msg);
     }
 
-    public static RestResult fail(int status, String message, Object data) {
-        return new RestResult(status, message, data);
+    public static RestResult fail() {
+        return new RestResult(FAIL);
+    }
+    public static RestResult fail(String message) {
+        return new RestResult(message);
     }
 
-    public static int getCodeSuccess() {
-        return CODE_SUCCESS;
-    }
 
     public long getResponseTime() {
         return responseTime;
@@ -77,19 +73,11 @@ public class RestResult<T> {
         this.msg = msg;
     }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public T getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(Object data) {
         this.data = data;
     }
 }

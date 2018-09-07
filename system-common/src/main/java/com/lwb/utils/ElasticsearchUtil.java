@@ -10,12 +10,15 @@ import org.elasticsearch.search.aggregations.bucket.range.InternalRange;
 import java.util.List;
 
 /**
+ * es工具类
+ * 用户将es结果转化为实体类
+ *
  * @author liuweibo
  * @date 2018/7/3
  */
-public class ElasticsearchUtil {
+public interface ElasticsearchUtil {
 
-    public static <T> List<T> converterDocToVo(SearchResponse resp, Class<T> clazz) {
+    static <T> List<T> converterDocToVo(SearchResponse resp, Class<T> clazz) {
         SearchHit[] hits = resp.getHits().getHits();
         List<T> result = Lists.newLinkedList();
         for (SearchHit hit : hits) {
@@ -26,7 +29,7 @@ public class ElasticsearchUtil {
         return result;
     }
 
-    public static <T> List<T> converterAggToVo(SearchResponse resp, Class<T> clazz, String aggName) {
+    static <T> List<T> converterAggToVo(SearchResponse resp, Class<T> clazz, String aggName) {
         Aggregation aggregation = resp.getAggregations().get(aggName);
         List<T> result = Lists.newLinkedList();
         if (aggregation instanceof InternalRange) {

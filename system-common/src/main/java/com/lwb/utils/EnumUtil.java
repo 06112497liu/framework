@@ -3,7 +3,7 @@ package com.lwb.utils;
 
 import com.lwb.annotation.Key;
 import com.lwb.annotation.Value;
-import com.sun.xml.internal.ws.util.UtilException;
+import com.lwb.entity.exeception.UtilException;
 
 import java.io.Serializable;
 import java.lang.reflect.Field;

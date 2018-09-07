@@ -43,7 +43,7 @@ public interface BeanMapperUtil {
         }
     }
 
-    static <T, S> List<T> mapList(Collection<S> sourceList, Class<T> destObjectclazz) {
+    static <E, T> List<T> mapList(Collection<E> sourceList, Class<T> destObjectclazz) {
         List<T> destinationList = new ArrayList();
         if (sourceList != null && sourceList.size() != 0) {
             Iterator it = sourceList.iterator();
