@@ -1,6 +1,8 @@
 package com.lwb.constant;
 
 /**
+ * 各种符号
+ *
  * @author liuweibo
  * @date 2018/9/6
  */
@@ -17,4 +19,8 @@ public interface SymbolConstant {
     String SPACE = " ";
 
     String SEMICOLON = ";";
+
+    String CROSS = "-";
+
+    String EMPTY = "";
 }

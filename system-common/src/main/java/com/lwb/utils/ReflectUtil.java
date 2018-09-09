@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 public interface ReflectUtil {
 
     /**
-     * 获取某个类的左右字段（包括父类）
+     * 获取某个类的所有字段（包括父类）
      * <note/>不包括static字段、{@link Transient}标记的字段和Object类中的字段
      *
      * @param clazz
